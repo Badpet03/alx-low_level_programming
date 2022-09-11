@@ -7,22 +7,28 @@
  *
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	int d;
+	int i, d;
 
-	for (d = 0; d < 100; d++)
+	for (i = '0'; i <= '9'; i++)
 	{
-		putchar((d / 10) + '0');
-		putchar((d % 10) + '0');
-		if (d != 99)
+		for (d = i + 1; d <= '9'; d++)
 		{
-			putchar(',');
-			putchar(' ');
+			if (d != i)
+			{
+				putchar (i);
+				putchar (d);
+
+				if (i == '8' && d == '9')
+					continue;
+
+				putchar (',');
+				putchar (' ');
+			}
 		}
 	}
-	putchar('\n');
+	putchar ('\n');
 
 	return (0);
-}	
+}
