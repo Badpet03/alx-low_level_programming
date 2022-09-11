@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - print triple combos
@@ -7,32 +8,28 @@
  *
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	int i, j, k;
+	int i, f, g;
 
-	i = 48;
-	j = 48;
-	k = 48;
-	while (i < 58)
+	for (i = '0'; i <= '9'; i++)
 	{
-		j = i + 1;
-		while (j < 58)
+		for (f = i + 1; f <= '9'; f++)
 		{
-			putchar(i);
-			putchar(j);
-			putchar(k);
-			if (i < 55 || j < 56 || k < 57)
+			if ((f != i) != g)
 			{
-				putchar(44);
-				putchar(32);
-						k++;
-						}
-						j++;
-						}
-						i++;
-						}
-						putchar(10);
-						return (0);
+				putchar (i);
+				putchar (f);
+				putchar (g);
+
+				if (i == '7' && f == '8')
+					continue;
+				putchar (',');
+				putchar (' ');
+			}
+		}
 	}
+	putchar ('\n');
+
+	return (0);
+}
