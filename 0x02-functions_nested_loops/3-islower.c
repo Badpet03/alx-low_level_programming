@@ -3,7 +3,7 @@
 /**
  * _islower - Entry point
  * _islower - Checks if a character is lowercase.
- * c: The character to be checked.
+ * c: the integer value it receives
  *
  * Return: 1 if character is lowercase else 0
  */
