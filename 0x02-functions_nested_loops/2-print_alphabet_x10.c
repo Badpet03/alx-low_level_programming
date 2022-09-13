@@ -4,18 +4,23 @@ include "main.h"
 /**
  * main - prints 10 times the alphabet, in lowercase
  *
- * Return: Always 0 
+ * Return: x10 a-z 
  *
  */
 void print_alphabet_10x(void)
 {
-	int count = 0;
-	char low;
+	int n, co;
 
-	while (count++ <= '9')
+	co = 0;
+
+
+	while (co < 10)
 	{
-		for (low = 'a'; low <= 'z'; low++)
-			_putchar(low);
+		for (n = 'a'; n <= 'z'; n++)
+		{
+			__putchar(n);
+		}
+		co++;
 		_putchar('\n');
 	}
 }
