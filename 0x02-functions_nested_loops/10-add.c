@@ -8,6 +8,7 @@
  * Return: result of addition
  */
 
-int add(int n1, int n2
-		return (sum);
+int add(int a, int b)
+{
+	return (a + b);
 }
