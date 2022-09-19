@@ -22,5 +22,5 @@ int _atoi(char *s)
 			break;
 	}
 
-	return (numero *negative);
+	return (numero * negative);
 }
