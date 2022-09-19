@@ -18,7 +18,7 @@ int _atoi(char *s)
 		else if (s[i] >= 0 + '0' && s[i] < 10 + '0')
 			numero = numero * 10 + (s[i] - '0');
 
-		else if (s[i - 1] >= 0 + '0' && s[i - 1] < 10 + '0')
+		else (s[i - 1] >= 0 + '0' && s[i - 1] < 10 + '0')
 			break;
 	}
 
