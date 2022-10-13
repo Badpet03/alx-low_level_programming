@@ -1,33 +1,77 @@
-nclude <stdio.h>
 #include "3-calc.h"
+
 /**
- * get_op_func - function pointer that selects the correct function to perform
- * the operation asked by the user
- * @s: the operator given by the user
+ * op_add - function that sums two int values
+ * @a: first operant
+ * @b: second operant
  *
- * Return: pointer to the function that corresponds to the
- * operator given as a parameter
+ * Return: result of the sum of "a + b"
  */
-int (*get_op_func(char *s))(int, int)
+
+int op_add(int a, int b)
 {
-	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
-		{NULL, NULL}
-	};
-	int i;
+	return (a + b);
+}
 
-	i = 0;
+/**
+ * op_sub - function that substracts two int values
+ * @a: first operant
+ * @b: second operant
+ *
+ * Return: result of the substraction of "a - b"
+ */
 
-	while (ops[i].op)
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
+
+/**
+ * op_mul - function that multiplies two int values
+ * @a: first operant
+ * @b: second operant
+ *
+ * Return: result of the multiplication of "a * b"
+ */
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
+
+/**
+ * op_div - function that divides two int values
+ * @a: first operant
+ * @b: second operant
+ *
+ * Return: result of the division of "a / b", if b is 0 exits with status 100
+ */
+
+int op_div(int a, int b)
+{
+	if (b == 0)
 	{
-		if (strcmp(ops[i].op, s) == 0)
-			return (ops[i].f);
-		i++;
+		printf("Error\n");
+		exit(100);
 	}
 
-	return (NULL);
+	return (a / b);
+}
+
+/**
+ * op_mod - function that gets a module of b
+ * @a: first operant
+ * @b: second operant
+ *
+ * Return: result of "a % b", if b is 0 exits with status 100
+ */
+
+int op_mod(int a, int b)
+{
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	return (a % b);
 }

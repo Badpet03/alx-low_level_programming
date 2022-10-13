@@ -1,18 +1,18 @@
-#include <stdio.h>
 #include "3-calc.h"
 
 /**
- * main - program that perfroms simple operations
- * @argc: number of arguments
- * @argv: array of arguments
+ * main - program that performs simple operations.
+ * @argc: number of arguments received.
+ * @argv: array of arguments received.
  *
- * Return: Always 0 (Success)
+ * Return: 0 on success, 1 otherwise as fail.
  */
+
 int main(int argc, char *argv[])
 {
-	int arg1, arg2, result;
-	char o;
-	int (*func)(int, int);
+	int num1 = 0;
+	int num2 = 0;
+	int res = 0;
 
 	if (argc != 4)
 	{
@@ -20,28 +20,12 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	arg1 = atoi(argv[1]);
-	arg2 = atoi(argv[3]);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
 
-	func = get_op_func(argv[2]);
+	res = get_op_func(argv[2])(num1, num2);
 
-	if (!func)
-	{
-		printf("Error\n");
-		exit(99);
-	}
-
-	o = *argv[2];
-
-	if ((o == '/' || o == '%') && arg2 == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-
-	result = func(arg1, arg2);
-
-	printf("%d\n", result);
+	printf("%d\n", res);
 
 	return (0);
 }
