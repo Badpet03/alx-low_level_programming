@@ -1,1 +1,1 @@
-0x09. C - Static libraries
+Dynamics in C
