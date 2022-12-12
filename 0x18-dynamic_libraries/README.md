@@ -1,1 +1,1 @@
-Dynamics in C
+# C - Dynamic libraries
